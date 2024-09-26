@@ -1,0 +1,3 @@
+pip freez > requirments.txt = this one to generate a file for the package installed in this project.
+
+pip install -r requirments.txt = fastest way to install all package from a project.

@@ -1,0 +1,13 @@
+<!-- media_list.html -->
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+<h1>Uploaded Media Files</h1>
+<ul>
+    {% for media in media_files %}
+        <li>
+            <h2>{{ media.title }}</h2>
+            <p>{{ media.description }}</p>
+            <a href="{{ media.upload.url }}">Download</a>
+        </li>
+    {% endfor %}
+</ul>
+<a href="{% url 'upload_file' %}">Upload new file</a>

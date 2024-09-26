@@ -1,0 +1,125 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e0f7fa;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+header {
+    background-color: #00796b;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+h2 {
+    color: black;
+    margin-top: 20px;
+}
+
+/* Featured Recipes grid */
+.featured-recipes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.recipe-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.recipe-card:hover {
+    transform: scale(1.05);
+}
+
+/* Flexbox for image and video side by side */
+.media-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Reduce image and video sizes */
+.media-container img, 
+.media-container video {
+    width: 48%; /* Each taking 48% width */
+    height: auto;
+    border-radius: 8px;
+}
+
+.recipe-card h3 {
+    font-size: 1.5rem;
+    margin: 12px 0;
+    color: #333;
+}
+
+section {
+    padding: 30px 0;
+}
+
+/* Section-specific styles */
+.breakfast-section {
+    background-color: #fff3e0;
+}
+
+.breakfast-section h2 {
+    color: black;
+}
+
+.lunch-section {
+    background-color: #e8f5e9;
+}
+
+.lunch-section h2 {
+    color: black;
+}
+
+.dinner-section {
+    background-color: #fbe9e7;
+}
+
+.dinner-section h2 {
+    color: black;
+}
+.recipe-card img, .recipe-card video {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+.breakfast-section .recipe-card img,
+.breakfast-section .recipe-card video,
+.lunch-section .recipe-card img,
+.lunch-section .recipe-card video,
+.dinner-section .recipe-card img,
+.dinner-section .recipe-card video {
+    max-width: 300px;
+    height: auto; 
+    margin: 0 auto;
+}
+footer {
+    background-color: #00796b;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: 20px;
+}

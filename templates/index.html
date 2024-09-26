@@ -1,0 +1,111 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipes | Homepage</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header class="container">
+        <h1>KELV_AM-DISHES</h1>
+    </header>
+
+    <main class="container">
+        <!-- Featured Recipes Section -->
+        <section>
+            <h2>Featured Recipes</h2>
+            <div class="featured-recipes">
+                {% for recipe in recipes %}
+                <div class="recipe-card">
+                    <h3>{{ recipe.title }}</h3>
+                    <div class="media-container">
+                        <img src="{{ recipe.image.url }}" alt="{{ recipe.title }} image">
+                        <video controls>
+                            <source src="{{ recipe.upload_video.url }}" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+                {% empty %}
+                <p>No recipes available at the moment.</p>
+                {% endfor %}
+            </div>
+        </section>
+
+        <!-- Breakfast Section -->
+        <section class="breakfast-section">
+            <h2>Breakfast Recipes</h2>
+            <div class="featured-recipes">
+                {% for breakfast in breakfast_recipes %}
+                <div class="recipe-card">
+                    <img src="{{ breakfast.image.url }}" alt="{{ breakfast.title }} image">
+                    <h3>{{ breakfast.title }}</h3>
+                    <p>{{ breakfast.description }}</p>
+                    <p>Preparation Time: {{ breakfast.prep_time }}</p>
+                    <p>Ingredients: {{ breakfast.ingredients }}</p>
+                    <p>Instructions: {{ breakfast.instructions }}</p>
+                    <video controls>
+                        <source src="{{ breakfast.upload_video.url }}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                {% empty %}
+                <p>No breakfast recipes available at the moment.</p>
+                {% endfor %}
+            </div>
+        </section>
+
+        <!-- Lunch Section -->
+        <section class="lunch-section">
+            <h2>Lunch Recipes</h2>
+            <div class="featured-recipes">
+                {% for lunch in lunch_recipes %}
+                <div class="recipe-card">
+                    <img src="{{ lunch.image.url }}" alt="{{ lunch.title }} image">
+                    <h3>{{ lunch.title }}</h3>
+                    <p>{{ lunch.description }}</p>
+                    <p>Preparation Time: {{ lunch.prep_time }}</p>
+                    <p>Ingredients: {{ lunch.ingredients }}</p>
+                    <p>Instructions: {{ lunch.instructions }}</p>
+                    <video controls>
+                        <source src="{{ lunch.upload_video.url }}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                {% empty %}
+                <p>No lunch recipes available at the moment.</p>
+                {% endfor %}
+            </div>
+        </section>
+
+        <!-- Dinner Section -->
+        <section class="dinner-section">
+            <h2>Dinner Recipes</h2>
+            <div class="featured-recipes">
+                {% for dinner in dinner_recipes %}
+                <div class="recipe-card">
+                    <img src="{{ dinner.image.url }}" alt="{{ dinner.title }} image">
+                    <h3>{{ dinner.title }}</h3>
+                    <p>{{ dinner.description }}</p>
+                    <p>Preparation Time: {{ dinner.prep_time }}</p>
+                    <p>Ingredients: {{ dinner.ingredients }}</p>
+                    <p>Instructions: {{ dinner.instructions }}</p>
+                    <video controls>
+                        <source src="{{ dinner.upload_video.url }}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                {% empty %}
+                <p>No dinner recipes available at the moment.</p>
+                {% endfor %}
+            </div>
+        </section>
+    </main>
+
+    <footer class="container">
+        <p>&copy; 2024 KELV_AM DISHES All rights reserved.</p>
+    </footer>
+</body>
+</html>

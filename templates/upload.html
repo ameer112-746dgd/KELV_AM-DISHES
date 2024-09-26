@@ -1,0 +1,7 @@
+<h1>Upload a new file</h1>
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Upload</button>
+</form>
+<a href="{% url 'media_list' %}">Back to list</a>
